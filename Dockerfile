@@ -11,6 +11,10 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev" \
         fluent-plugin-secure-forward \
  && sudo gem install \
         fluent-plugin-record-reformer \
+ && sudo gem install \
+        fluent-plugin-kubernetes \
+ && sudo gem install \
+        fluent-plugin-prometheus \
  && sudo gem sources --clear-all \
  && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
