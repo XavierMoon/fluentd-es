@@ -12,7 +12,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev" \
  && sudo gem install \
         fluent-plugin-record-reformer \
  && sudo gem install \
-        fluent-plugin-kubernetes \
+        fluent-plugin-rancher \
  && sudo gem install \
         fluent-plugin-prometheus \
  && sudo gem sources --clear-all \
