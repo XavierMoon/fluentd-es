@@ -18,10 +18,9 @@ RUN apt-get update \
  && buildDeps=" \
       make gcc g++ libc-dev \
       ruby-dev \
-      procps \
       wget bzip2 gnupg dirmngr \
     " \
- && apt-get install -y --no-install-recommends $buildDeps \
+ && apt-get install -y --no-install-recommends procps $buildDeps \
  && update-ca-certificates \
  && echo 'gem: --no-document' >> /etc/gemrc \
  && gem install oj -v 3.3.10 \
@@ -52,8 +51,8 @@ RUN apt-get update \
                   -o APT::AutoRemove::RecommendsImportant=false \
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
- && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
-
+ && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
+ && ulimit -n 65536
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
 # configuration/plugins path (default: copied from .)
