@@ -29,7 +29,6 @@ RUN apt-get update \
  && gem install fluent-plugin-elasticsearch  \
  && gem install fluent-plugin-secure-forward   \
  && gem install fluent-plugin-record-reformer \
- && gem install fluent-plugin-rancher   \
  && gem install fluent-plugin-kubernetes  \
  && gem install fluent-plugin-prometheus  \
  && dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" \
