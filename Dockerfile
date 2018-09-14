@@ -56,10 +56,10 @@ RUN apt-get update \
 # for log storage (maybe shared with host)
 RUN mkdir -p /fluentd/log
 # configuration/plugins path (default: copied from .)
-RUN mkdir -p /fluentd/etc /fluentd/plugins
+RUN mkdir -p /fluentd/etc
 
 COPY fluent.conf /fluentd/etc/
-ADD plugins /fluentd/
+COPY plugins /fluentd/plugins
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
