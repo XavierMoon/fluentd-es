@@ -5,6 +5,7 @@ ENV DUMB_INIT_VERSION=1.2.1
 
 ENV GOSU_VERSION=1.10
 USER root
+COPY .apt.sources.list /etc/apt/sources.list
 
 ARG DEBIAN_FRONTEND=noninteractive
 # Do not split this into multiple RUN!
