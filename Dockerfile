@@ -58,7 +58,7 @@ RUN mkdir -p /fluentd/log
 RUN mkdir -p /fluentd/etc /fluentd/plugins
 
 COPY fluent.conf /fluentd/etc/
-COPY plugins /fluentd/plugins/
+COPY plugins /fluentd/
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
